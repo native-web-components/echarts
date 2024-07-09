@@ -1,0 +1,38 @@
+{
+  "name": "echarts",
+  "author": "",
+  "description": "",
+  "private": true,
+  "license": "MIT",
+  "version": "0.0.0",
+  "type": "module",
+  "types": "./dist/echarts.d.ts",
+  "main": "./dist/echarts.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/echarts.es.js",
+      "require": "./dist/echarts.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build:example": "tsc && vite build",
+    "build:lib": "tsc && vite build --config ./vite-lib.config.js",
+    "build": "npm run build:lib && npm run build:example",
+    "preview": "vite preview",
+    "release": "npm run build && node ./bin/release.js"
+  },
+  "devDependencies": {
+    "@types/echarts": "^4.9.22",
+    "@types/node": "^20.14.2",
+    "archiver": "^7.0.1",
+    "sass": "^1.77.4",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.12",
+    "vite-plugin-dts": "^3.9.1"
+  },
+  "dependencies": {
+    "echarts": "^5.5.1",
+    "echarts-gl": "^2.0.9"
+  }
+}
