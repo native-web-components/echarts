@@ -33,7 +33,6 @@
     "vite-plugin-dts": "^3.9.1"
   },
   "dependencies": {
-    "echarts": "^5.5.1",
-    "echarts-gl": "^2.0.9"
+    "echarts": "^5.5.1"
   }
 }
