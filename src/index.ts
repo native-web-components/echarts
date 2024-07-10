@@ -16,6 +16,9 @@ class WebComponent extends BaseComponent {
     this.echartsInstance = Echarts.init(container);
     this.echartsInstance.setOption(this.echartsOptions, true, true);
   }
+  getEchartsClass() {
+    return Echarts
+  }
   getEchartsInstance() {
     return this.echartsInstance;
   }
