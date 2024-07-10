@@ -11,6 +11,11 @@ export default defineConfig(async (params: ConfigEnv) => {
   );
   return {
     base: "./",
+    resolve: {
+      alias: {
+        "echarts": resolve(__dirname, "./node_modules/echarts"),
+      },
+    },
     build: {
       lib: {
         entry: resolve(__dirname, "src/index.ts"),
@@ -22,11 +27,15 @@ export default defineConfig(async (params: ConfigEnv) => {
       sourcemap: mode === "development",
       minify: mode !== "development",
       rollupOptions: {
-        external: [],
+        // 配置将 ECharts 作为外部依赖
+        external: ['echarts'],
         output: {
-          globals: {},
-        },
-      },
+          // 将 ECharts 作为全局变量引入
+          globals: {
+            "echarts": 'echarts'
+          }
+        }
+      }
     },
     plugins: [dts({ rollupTypes: true })],
   };

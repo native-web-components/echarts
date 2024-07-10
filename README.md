@@ -1,5 +1,11 @@
 # echarts
 
+### install
+
+```bash
+npm install echarts --save
+```
+
 ### usage
 
 ```html
@@ -11,7 +17,9 @@
   </head>
   <body>
     <div id="app"></div>
-    <wc-echarts style="display: block; height: 500px; background: #f5f5f5;"></wc-echarts>
+    <wc-echarts
+      style="display: block; height: 500px; background: #f5f5f5;"
+    ></wc-echarts>
 
     <script type="module">
       const echarts = document.querySelector("wc-echarts");

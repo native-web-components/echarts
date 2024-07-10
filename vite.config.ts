@@ -1,3 +1,4 @@
+import { resolve } from "path";
 import { defineConfig, loadEnv, ConfigEnv } from "vite";
 
 export default defineConfig(async (params: ConfigEnv) => {
@@ -12,6 +13,11 @@ export default defineConfig(async (params: ConfigEnv) => {
       port: 9999,
     },
     base: "./",
+    resolve: {
+      alias: {
+        "echarts": resolve(__dirname, "./node_modules/echarts"),
+      },
+    },
     build: {
       outDir: "dist/example",
       emptyOutDir: true,

@@ -1,5 +1,5 @@
 import BaseComponent from "./BaseComponent";
-import * as Echarts from "../node_modules/echarts";
+import * as Echarts from "echarts";
 class WebComponent extends BaseComponent {
   echartsInstance!: Echarts.ECharts;
   echartsOptions: Echarts.EChartOption | Echarts.EChartsResponsiveOption = {};
